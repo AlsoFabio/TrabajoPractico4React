@@ -5,6 +5,7 @@ import Cargando from "./components/Cargando";
 import ColoresLista from "./components/ColoresLista";
 
 function App() {
+  // count es donde estoy guardando lo que recibo de la api
   const [count, setCount] = useState([]);
   const [estaCargando, setEstaCargando] = useState(false);
 
@@ -14,10 +15,11 @@ function App() {
 
   const handleApi = () => {
     const url = "https://rhodesapi.cyclic.app/api/operator";
+    // objeto es donde guardo temporalmente lo que recibo de la api antes de guardarlo en count
     let objeto = new Array();
     let cantidad = document.getElementById('cantidad').value;
 
-    console.log(cantidad);
+    // muestro el spinner de carga
     setEstaCargando(true);
 
     try {
@@ -29,7 +31,7 @@ function App() {
               nombre: res[i].name,
               rareza: res[i].rarity,
               art: res[i].art.Base,
-              clase: res[i].class[0],
+              clase: res[i].class,
               url: res[i].url
             };
           }
@@ -40,10 +42,12 @@ function App() {
               : a.nombre.localeCompare(b.nombre);
           });
           
+          // con esta condicional muestro cuantos elementos de la api quiero mostrar
           cantidad>0
             ?setCount(objeto.slice(0,cantidad))
             :setCount(objeto)
 
+          // escondo el spinner 
           setEstaCargando(false);
         });
     } catch (error) {
@@ -51,7 +55,7 @@ function App() {
       setEstaCargando(false);
     }
   };
-  const handleBorrar=(nombre)=>{
+  const handleBorrar=(nombre)=>{//borra un elemento de la lista
     setCount(count.filter(e=>e.nombre!=nombre))
   }
   return (
@@ -71,7 +75,9 @@ function App() {
               nombre={elemento.nombre}
               rareza={elemento.rareza}
               art={elemento.art}
-              clase={elemento.clase}
+              clase={elemento.clase[0]}
+              subclase1={elemento.clase[1]}
+              subclase2={elemento.clase[2]}
               url={elemento.url}
               key={index}
               borrar={()=>{handleBorrar(elemento.nombre)}}
