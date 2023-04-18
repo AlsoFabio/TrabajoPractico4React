@@ -10,7 +10,6 @@ function App() {
   const [estaCargando, setEstaCargando] = useState(false);
 
   useEffect(() => {
-    console.log(count);
   }, [count]);
 
   const handleApi = () => {
@@ -65,7 +64,7 @@ function App() {
         <input type="number" id="cantidad" placeholder="Cuantos quieres mostrar" ></input>
       </div>
 
-      {estaCargando && <Cargando/> }
+      {estaCargando && <Cargando/>}
 
       <div className="container text-center">
         <div className="row">

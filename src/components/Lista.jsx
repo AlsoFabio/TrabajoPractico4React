@@ -6,6 +6,7 @@ export default function Lista( props ) {
     <>
       <div>
         <h5>{rareza}* {nombre}</h5>
+        <div></div>
         <img
           src={art}
           className="card-img-top"
