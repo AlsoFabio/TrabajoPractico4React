@@ -15,3 +15,9 @@ e)¿Para qué sirve el hook useEffect?
 
 f)¿Qué es el contexto en React?
     el contexto guarda datos para poder usarlos entre componentes sin tener que estar pasandolos uno por uno entre los distintos niveles de jerarquia de los componentes, sino llamarlos en donde los quieres utilizar
+
+
+Fuentes
+https://keepcoding.io/blog/estado-en-react/#:~:text=El%20estado%20en%20React%2C%20tambi%C3%A9n,que%20un%20componente%20puede%20manejar.
+https://keepcoding.io/blog/useeffect-en-react/#:~:text=useEffect%20en%20React%20es%20un,de%20vida%20de%20nuestro%20componente.
+https://es.reactjs.org/docs/components-and-props.html#:~:text=Los%20componentes%20permiten%20separar%20la,API%20detallada%20sobre%20componentes%20aqu%C3%AD.
