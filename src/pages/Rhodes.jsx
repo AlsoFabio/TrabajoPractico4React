@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
-import ColoresLista from '../components/ColoresLista';
-import Lista from '../components/Lista';
+import ColoresLista from '../components/RhodesComponents/ColoresLista';
+import Lista from '../components/RhodesComponents/Lista';
 import Cargando from '../components/Cargando';
 
 export default function Rhodes() {
@@ -64,7 +64,7 @@ export default function Rhodes() {
     <>
       <div className="App" style={{marginTop:"80px"}}>
         <div>
-          <button onClick={handleApi}>boton lindo</button>
+          <button onClick={handleApi} style={{margin:5}}>boton lindo</button>
           <input type="number" id="cantidad" placeholder="Cuantos quieres mostrar" ></input>
         </div>
 
