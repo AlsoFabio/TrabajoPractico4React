@@ -20,8 +20,7 @@ export default function Fatego() {
             .then((res) => res.json())
             .then((res) => {
                 console.log(res)
-                for (let i = 0; i < 4; i++) {
-                    console.log(res[i].name);
+                for (let i = 0; i < res.length; i++) {
                     objeto[i] = {
                         nombre: res[i].name,
                         rareza: res[i].rarity,
@@ -29,11 +28,11 @@ export default function Fatego() {
                     }
                 }
                 // ordena el arreglo que traigo con el fetch
-                // objeto.sort((a, b) => {
-                //     return a.rareza !== b.rareza
-                //         ? b.rareza - a.rareza
-                //         : a.nombre.localeCompare(b.nombre);
-                // });
+                objeto.sort((a, b) => {
+                    return a.rareza !== b.rareza
+                        ? b.rareza - a.rareza
+                        : a.nombre.localeCompare(b.nombre);
+                });
 
                 // con esta condicional muestro cuantos elementos de la api quiero mostrar
                 cantidad > 0
